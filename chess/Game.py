@@ -6,6 +6,7 @@ from Board import Board
 from Config import Config
 from Square import Square
 
+
 class Game:
     def __init__(self):
         self.next_player = 'white'

@@ -1,7 +1,7 @@
 import os.path
 
 
-class Piece:
+class Piece:  # Abstract class
     def __init__(self, name, color, value, texture=None, texture_rect=None):
         """
         :param name: Name

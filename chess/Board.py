@@ -48,6 +48,26 @@ class Board:
         # King
         self.squares[row_other][4] = Square(row_other, 4, King(color))
 
+    def check_promotion(self, piece, final):
+        if isinstance(piece, Pawn):
+            row, col = final.row, final.col
+            if row == 0 or row == 7:
+                self.squares[row][col].piece = Queen(piece.color)
+
+    def castling(self, initial, final):
+        return abs(initial.col - final.col) == 2
+
+    # def set_true_en_passant(self, piece):
+    #     if not isinstance(piece, Pawn):
+    #         return
+    #
+    #     for row in range(ROWS):
+    #         for col in range(COLS):
+    #             if isinstance(self.squares[row][col].piece, Pawn):
+    #                 self.squares[row][col].piece.en_passant = False
+    #
+    #     piece.en_passant = True
+
     def in_check(self, piece, move):
         temp_piece = copy.deepcopy(piece)
         temp_board = copy.deepcopy(self)
@@ -311,6 +331,9 @@ class Board:
         self.squares[initial.row][initial.col].piece = None
         self.squares[final.row][final.col].piece = piece
 
+        # pawn promotion
+
+
         # Piece moved
         piece.moved = True
 
@@ -319,7 +342,6 @@ class Board:
 
         # Save last move
         self.last_move = move
-
 
 
 if __name__ == '__main__':

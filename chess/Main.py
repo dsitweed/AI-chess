@@ -113,7 +113,14 @@ class Main:
                     # Changing themes if press t key
                     if event.unicode == 't':
                         game.change_theme()
-                        print(f"Changed theme - index: {game.config.index}")
+                        print(f"Changed theme when press t key - index: {game.config.index}")
+                    elif event.unicode == 'r':
+                        game.reset()
+                        # reassign required variables
+                        game = self.game
+                        board = self.game.board
+                        dragger = self.game.dragger
+                        print(f"Reset the game when press r key")
 
                 elif event.type == pygame.QUIT:
                     pygame.quit()
