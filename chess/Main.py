@@ -2,6 +2,8 @@ import pygame
 import sys
 from constants import *
 from Game import Game
+from Square import Square
+from Move import Move
 
 
 class Main:
@@ -61,6 +63,7 @@ class Main:
                     # game.set_hover(motion_row, motion_col)
                     if dragger.dragging:
                         dragger.update_mouse(event.pos)
+                        # show methods
                         game.show_board(screen)
                         game.show_moves(screen)
                         game.show_pieces(screen)
@@ -68,6 +71,25 @@ class Main:
 
                 # Mouse release
                 elif event.type == pygame.MOUSEBUTTONUP:
+
+                    if dragger.dragging:
+                        dragger.update_mouse(event.pos)
+
+                        released_row = dragger.mouse_y // SQUARE_SIZE
+                        released_col = dragger.mouse_x // SQUARE_SIZE
+
+                        # Create possible move
+                        initial = Square(dragger.initial_row, dragger.initial_col)
+                        final = Square(released_row, released_col)
+                        move = Move(initial, final)
+                        # Check valid move
+                        if board.valid_move(dragger.piece, move):
+                            board.move(dragger.piece, move)
+
+                            # Show methods
+                            game.show_board(screen)
+                            game.show_pieces(screen)
+
                     dragger.undrag_piece()
 
                 elif event.type == pygame.QUIT:

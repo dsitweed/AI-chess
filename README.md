@@ -8,3 +8,6 @@
 ### 3. Thêm màn hình start - thêm màn hình chiến thắng [Git hướng dẫn](https://github.com/mandrelbrotset/pygame-chess/tree/master)
 ### 4. Thêm hướng dẫn ở chân bàn cờ, thêm cột bên phải để chứa các quân cờ đã ăn [Hướng dẫn trên youtube - phần đầu](https://www.youtube.com/watch?v=X-e0jk4I938)
 
+## Luồng chạy của chương trình
+1. Khi chọn con cờ lưu trữ các nước đi hợp lệ của nó vào attribute của instance đó 
+2. 
