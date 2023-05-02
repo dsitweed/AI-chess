@@ -1,9 +1,9 @@
 # Tóm tắt
-- [Các tri thúc bổ sung](#Các tri thức bổ sung)
-- [Cải tiến](#Suy nghĩ cải tiến chương trình)
-- [Luồng chạy của chương trình](#Luồng chạy của chương trình)
+- [Các tri thúc bổ sung](#Các-tri-thức-bổ-sung)
+- [Cải tiến](#Suy-nghĩ-cải-tiến-chương-trình)
+- [Luồng chạy của chương trình](#Luồng-chạy-của-chương-trình)
 - [Bug](#BUG)
-- [Tài liệu tham khảo](#Các source code tham khảo)
+- [Tài liệu tham khảo](#Các-source-code-tham-khảo)
 
 # Các tri thức bổ sung
 ### 1. Mỗi con cờ có 1 giá trị khác nhau
