@@ -10,4 +10,9 @@
 
 ## Luồng chạy của chương trình
 1. Khi chọn con cờ lưu trữ các nước đi hợp lệ của nó vào attribute của instance đó 
-2. 
+
+
+## BUG
+1. Nhấn vào thì tính các đường đi hợp lệ
+2. Nếu quân ta đi vào những vị trí đã hợp lệ từ trước thì không phân biệt được quân ta và quân địch
+3. Nguyên nhân: - khi di chuyển chưa cập nhật vị trí của quân. Hàm calculate có vấn đề

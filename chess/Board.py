@@ -52,7 +52,6 @@ class Board:
         temp_piece = copy.deepcopy(piece)
         temp_board = copy.deepcopy(self)
 
-
     def calc_moves(self, row, col, piece):
         """
         Calculate all the possible  (valid) moves of an specific piece on a specific position
@@ -203,9 +202,9 @@ class Board:
                         # append new valid move
                         piece.add_move(move)
                     else:  # have team piece = break
-                        break
+                        continue
                 else:  # not in range
-                    break
+                    continue
 
             # Castling moves
             if not piece.moved:  # piece is instance of King class
