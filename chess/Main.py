@@ -45,8 +45,8 @@ class Main:
                     if board.squares[clicked_row][clicked_col].has_piece():
                         piece = board.squares[clicked_row][clicked_col].piece
                         # Check valid piece color
-                        if piece.color != game.next_player:
-                            continue
+                        # if piece.color != game.next_player:
+                        #     continue
                         # Clear before valid move
                         piece.clear_moves()
                         # Calculate valid move
@@ -55,9 +55,10 @@ class Main:
                         dragger.drag_piece(piece)
                         # Show method
                         game.show_board(screen)
+                        game.show_last_move(screen)
                         game.show_moves(screen)
                         game.show_pieces(screen)
-                        print(f"{board.squares[clicked_row][clicked_col].col} - {board.squares[clicked_row][clicked_col].row} - {dragger.dragging}")
+                        # print(f"{board.squares[clicked_row][clicked_col].col} - {board.squares[clicked_row][clicked_col].row} - {dragger.dragging}")
                         # Valid piece (color) ?
 
 
@@ -67,7 +68,9 @@ class Main:
                     motion_col = event.pos[0] // SQUARE_SIZE
                     motion_row = event.pos[1] // SQUARE_SIZE
 
-                    game.set_hover(motion_row, motion_col)
+                    if Square.in_range(motion_row, motion_col):
+                        game.set_hover(motion_row, motion_col)
+
                     if dragger.dragging:
                         dragger.update_mouse(event.pos)
                         # show methods

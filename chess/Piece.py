@@ -66,3 +66,4 @@ class King(Piece):
         super().__init__('king', color, 10000.0)
         self.left_rook = None
         self.right_rook = None
+        self.can_castle = False
