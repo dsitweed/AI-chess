@@ -101,6 +101,7 @@ class Board:
             for col in range(COLS):
                 if temp_board.squares[row][col].has_enemy_piece(piece.color):
                     piece_ = temp_board.squares[row][col].piece
+                    # -> need a param to avoid infinite loop -> in_check parameter check = False
                     temp_board.calc_moves(row, col, piece_, check=False)
 
                     for m in piece_.moves:
@@ -116,7 +117,9 @@ class Board:
         :param row: now row position
         :param col: now columns position
         :param piece: piece in chess board
-        :param check: Check now king is being check # Kiểm tra xem hiện tại (vua) có đang bị chiếu không
+        :param check: Check now king is being check And avoid infinite loop # Kiểm tra xem hiện tại (vua) có đang bị chiếu không
+        When call in_check function call again calc_moves function. In calc_moves function we call again in_check
+        -> need a param to avoid infinite loop -> in_check parameter check = False
         :return:
         """
 
