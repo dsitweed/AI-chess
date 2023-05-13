@@ -1,15 +1,3 @@
-import os.path
-import pygame
-
-
-SEARCHING = "searching"
-NODE_STATE = ["source", "goal"]
-NODE_EMPTY = "empty"
-
-GOAL = "goal"
-SOURCE = "source"
-SUCCESS = "success"
-FAILED = "failed"
 
 WIDTH, HEIGHT = 800, 800
 ROWS, COLS = 8, 8
